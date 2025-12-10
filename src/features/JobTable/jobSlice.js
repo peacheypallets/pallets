@@ -5,7 +5,7 @@ import axios from 'axios'
 
 const initialState = {
   jobs: [],
-  loaded: false
+  loaded: false,
 }
 
 export const getJobs = createAsyncThunk('jobs/fetchJobs', async () => {
@@ -35,7 +35,7 @@ export const getJobsByID = createAsyncThunk('jobs/fetchJobsByID', async (ID) => 
 })
 
 export const loadOrders = createAsyncThunk('jobs/loadJobs', async (jobs) => {
-  console.log('load jobs')
+
   return jobs
 })
 
@@ -51,13 +51,12 @@ export const sendPalletUpdate = createAsyncThunk('jobs/updatePalletByID', async 
 
   const body = {
     "data": 
-    {"palletsPicked" : updatePalletCount,
+    {"palletsPicked" : updatePalletCount.toString(),
       "isCompleted" : updatePalletCount >= palletsAvailable ? true : false
      }
   }
 
   const res = await axios.put(`${IP}/orders/${id}`, body, config)
-
   return res
 })
 

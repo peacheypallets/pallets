@@ -11,7 +11,7 @@ function App() {
 
 
   return (
-    <div className="App flex flex-col justify-center content-between p-2 w-full">
+    <div className="App flex flex-col justify-center items-center content-between p-2 w-full lg:w-lg">
       <Navbar/>
       <JobGrid/>
     </div>
