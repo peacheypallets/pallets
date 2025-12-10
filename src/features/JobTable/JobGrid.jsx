@@ -13,7 +13,7 @@ const JobGrid = () => {
   const [showCompleted, setShowCompleted] = useState(false)
   const [updateButton, setUpdateButton] = useState(false)
   const [updatePalletCount, setUpdatePalletCount] = useState(0)
-  const [showAlert, setShowAlert] = useState(true)
+  const [showAlert, setShowAlert] = useState(false)
 
   useEffect(() => {
     const timeout = setTimeout(() => {
